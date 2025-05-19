@@ -1,6 +1,6 @@
 module intern_247
 
-go 1.20
+go 1.22
 
 require (
 	github.com/bamzi/jobrunner v1.0.0
