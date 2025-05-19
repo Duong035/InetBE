@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -t trjeumanh1213/iNET-BE:latest .
+        run: docker build -t trjeumanh1213/inet-be:latest .
 
       - name: Push the Docker image
-        run: docker push trjeumanh1213/iNET-BE:latest
+        run: docker push trjeumanh1213/inet-be:latest
