@@ -3,8 +3,11 @@ FROM golang:1.20-alpine AS builder
 
 WORKDIR /app
 
-# Không cần copy go.mod nếu không dùng module
+# Copy source code vào container
 COPY . .
+
+# Nếu đang dùng module thì đảm bảo go.mod đúng cú pháp (ví dụ: go 1.20)
+RUN go mod tidy 
 
 # Build app
 RUN go build -o main .
@@ -14,6 +17,8 @@ FROM alpine:latest
 
 WORKDIR /app
 
+# Copy file binary từ builder stage
 COPY --from=builder /app/main .
 
+# Lệnh chạy app
 CMD ["./main"]
