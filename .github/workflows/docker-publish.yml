@@ -4,12 +4,14 @@ on:
   push:
     branches:
       - main  # Chỉ chạy khi push lên nhánh main
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print Docker username (debug)
+        run: echo "Username is ${{ secrets.DOCKER_USERNAME }}"
+
       - name: Checkout code
         uses: actions/checkout@v3
 
