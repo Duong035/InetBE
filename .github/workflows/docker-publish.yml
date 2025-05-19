@@ -3,7 +3,7 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - main  # Hoặc nhánh mày muốn
+      - main  # Chỉ chạy khi push lên nhánh main
 
 jobs:
   build:
