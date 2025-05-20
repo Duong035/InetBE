@@ -12,5 +12,5 @@ func main() {
 	app2.Setup()
 	app := fiber.New()
 	routes.AdminRoutes(app)
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":4000"))
 }
